@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from '../HomePage/HomePage';
+import Register from '../Register/Register';
 
 const App = () => (
-  <BrowserRouter>
+  <Router>
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route exact path="/register" component={Register} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
 
 export default App;
