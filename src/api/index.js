@@ -42,11 +42,17 @@ export const fetchAllLawyers = async () => {
   const allLawyers = await fetchedLawyers.json();
   return allLawyers;
 };
-// export const updateUser = () => async dispatch => {
-//   try {
-//     const user = await getUser();
-//     dispatch(setUser(user));
-//   } catch (error) {
-//     handleError(error);
-//   }
-// };
+
+export const fetchALawyer = async (id, setLawyer) => {
+  const getALawyer = await fetch(`${baseUrl}/lawyers/${id}`, {
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  const aLawyer = await getALawyer.json();
+  return setLawyer(aLawyer);
+
+};
