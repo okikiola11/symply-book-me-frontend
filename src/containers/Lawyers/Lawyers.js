@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Lawyer from '../../components/Lawyers/Lawyers';
-// import './Lawyers.css';
+import Sidebar from '../Sidebar/Sidebar';
+import './Lawyers.css';
 import { fetchLawyers } from '../../Redux/actions';
 import { fetchAllLawyers } from '../../api';
 
@@ -29,6 +30,7 @@ const Lawyers = () => {
 
   return (
     <>
+      <Sidebar />
       {lawyers.length ? (
         <section className="content">
           <div className="text-center docs-title">
