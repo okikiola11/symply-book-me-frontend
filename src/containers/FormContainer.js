@@ -17,7 +17,7 @@ function FormContainer({ title, children }) {
             </div>
           ) : (
             <div className="my-3 px-3 form__footer">
-              <span>Do not have an account?</span>
+              <span>You do not have an account?</span>
               <Link className="ml-2" to="/signin">Register</Link>
             </div>
           )}

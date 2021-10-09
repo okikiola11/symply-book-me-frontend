@@ -1,19 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
-
-* {
-  font-size: 10px;
-}
 
 .homepage__main {
   background-image: url('../../assets/lawyers-bg.jpg');
   background-size: cover;
   background-position: center center;
   font-family: 'Dosis', sans-serif;
-}
-
-.homepage-links a {
-  font-size: 2rem;
 }
 
 .homepage__welcome_text {
@@ -43,14 +34,4 @@ nav {
 main {
   width: 100%;
   height: 100vh;
-}
-
-.logo {
-  font-size: 3rem ;
-  font-weight: bolder;
-  font-family: 'Italianno', cursive;
-}
-
-.bg-color {
-  width: 100%;
 }

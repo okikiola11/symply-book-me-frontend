@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 import * as action from '../Redux/actions/index';
 import styles from '../styles/Auth.module.css';
 import { userRegistration } from '../api';
+import Header from '../components/Header/Header';
 
 const Signup = ({ history }) => {
   const dispatch = useDispatch();
   const [error, setError] = useState('');
   const [isLoaded, setIsLoaded] = useState(null);
-  // const user = useSelector((state) => state.user);
 
   const userObj = {
     user: {},
@@ -48,9 +48,7 @@ const Signup = ({ history }) => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.homeLink}>
-        <Link to="/">Home</Link>
-      </div>
+      <Header />
 
       <div className={`${styles.formContainer} text-center`}>
         <form data-testid="form" onSubmit={handleSubmit}>
@@ -74,7 +72,9 @@ const Signup = ({ history }) => {
               <input type="password" name="password" id="password" className="form-control" required onChange={handleChange} />
             </label>
           </div>
-          <button type="submit" className="p-0 m-0">Submit</button>
+          <div className={`${styles.spaces}`}>
+            <button type="submit" className="btn btn-primary p-0 m-0">Submit</button>
+          </div>
           <div>
             Already have an account.
             {' '}

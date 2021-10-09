@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useParams } from 'react-router-dom';
@@ -70,7 +69,7 @@ const LawyerDetails = () => {
         <section className="content">
           <div className="text-center row" onDragStart={preventDrag}>
             <div className={`${styles.imgContainer} col-md-8`}>
-              <img src={lawyer.image} alt={lawyer.name} />
+              <img src={lawyer.image_url} alt={lawyer.name} />
             </div>
             <div className={`${styles.leftNav} col-md-4`}>
               <h3 className={`${styles.name} font-weight-bold`}>{lawyer.name}</h3>
@@ -134,14 +133,6 @@ const LawyerDetails = () => {
       )}
     </>
   );
-};
-
-LawyerDetails.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      lawyer_id: PropTypes.string,
-    }),
-  }).isRequired,
 };
 
 export default LawyerDetails;

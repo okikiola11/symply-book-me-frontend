@@ -10,6 +10,7 @@ import FormContainer from './FormContainer';
 import Form from '../components/Form';
 import * as action from '../Redux/actions/index';
 import { userLogin } from '../api/index';
+import styles from '../styles/Auth.module.css';
 
 const schema = yup.object().shape({
   email: yup.string().email('Invalid email').required('Email is required'),
@@ -41,23 +42,25 @@ const Login = () => {
     }
   };
   return (
-    <div className="max-width">
-      <FormContainer title="Login">
-        <Form handleSubmit={handleSubmit(handleOnsubmit)}>
-          <div className="form-group">
-            <span>Email address</span>
-            <input {...register('email')} type="email" className="form-control" id="email" name="email" />
-            <small className="text-danger">{errors?.email?.message}</small>
-          </div>
-          <div className="form-group">
-            <span>Password</span>
-            <input {...register('password')} type="password" className="form-control" id="password" name="password" />
-            <small className="text-danger">{errors?.password?.message}</small>
-          </div>
-          <button type="submit" className="btn btn-primary mt-4">Submit</button>
-        </Form>
-      </FormContainer>
-    </div>
+    <section className={styles.container}>
+      <div className={`${styles.formContainer}`}>
+        <FormContainer title="Login">
+          <Form handleSubmit={handleSubmit(handleOnsubmit)}>
+            <div className="form-group">
+              <span>Email address</span>
+              <input {...register('email')} type="email" className="form-control" id="email" name="email" />
+              <small className="text-danger">{errors?.email?.message}</small>
+            </div>
+            <div className="form-group">
+              <span>Password</span>
+              <input {...register('password')} type="password" className="form-control" id="password" name="password" />
+              <small className="text-danger">{errors?.password?.message}</small>
+            </div>
+            <button type="submit" className="btn btn-primary mt-4">Submit</button>
+          </Form>
+        </FormContainer>
+      </div>
+    </section>
   );
 };
 

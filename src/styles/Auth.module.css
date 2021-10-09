@@ -1,5 +1,5 @@
 .container {
-  background-color: #f2b706;
+  background-color: #fafafa;
   min-height: 100vh;
 }
 
@@ -7,14 +7,11 @@ h3 {
   margin-top: 50px;
 }
 
-form {
-  margin: 10px;
-}
-
 input,
 label {
-  width: 100%;
+  width: 80%;
   text-align: left;
+  font-size: 1.6rem;
 }
 
 .formContainer {
@@ -26,4 +23,19 @@ label {
 .homeLink {
   text-align: right;
   padding: 30px;
+}
+
+button {
+  width: 20%;
+  padding: 10px 0;
+  padding-top: 50px;
+  font-size: 1.6rem;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+.spaces {
+  margin-top: 20px !important;
 }
