@@ -1,12 +1,3 @@
-// INITIAL STATE
-// const initialState = {
-//   profile: {
-//     name: '',
-//     email: '',
-//     password: '',
-//   },
-// };
-
 const authReducer = (state = {}, action) => {
   switch (action.type) {
     case 'LOGIN':

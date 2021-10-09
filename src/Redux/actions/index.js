@@ -6,3 +6,8 @@ export const fetchUser = (user) => ({
 export const destroyUser = () => ({
   type: 'LOGOUT',
 });
+
+export const fetchLawyers = (lawyers) => ({
+  type: 'FETCH_LAWYERS',
+  payload: lawyers,
+});

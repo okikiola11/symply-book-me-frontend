@@ -28,8 +28,25 @@ export const userLogin = async (userObj) => {
   const user = await loggedInUser.json();
   localStorage.setItem('token', user.token);
   return user;
-  // .then(res => res.json())
-  // .then(data => {
-  //   localStorage.setItem('token', data.data.token);
-  //   dispatch(action.fetchUser(data.data.user));
 };
+
+export const fetchAllLawyers = async () => {
+  const fetchedLawyers = await fetch(`${baseUrl}/lawyers`, {
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  const allLawyers = await fetchedLawyers.json();
+  return allLawyers;
+};
+// export const updateUser = () => async dispatch => {
+//   try {
+//     const user = await getUser();
+//     dispatch(setUser(user));
+//   } catch (error) {
+//     handleError(error);
+//   }
+// };
