@@ -30,6 +30,24 @@ export const userLogin = async (userObj) => {
   return user;
 };
 
+export const signOut = async () => {
+  const logOut = await fetch(`${baseUrl}/log_out`, {
+    method: 'DELETE',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  const userLogOut = await logOut.json();
+  return userLogOut;
+  // .then(res => res.json())
+  // .then(() => {
+  //   dispatch(action.destroyUser());
+  // });
+};
+
 export const fetchAllLawyers = async () => {
   const fetchedLawyers = await fetch(`${baseUrl}/lawyers`, {
     mode: 'cors',
