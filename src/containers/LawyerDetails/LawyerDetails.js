@@ -19,6 +19,7 @@ const LawyerDetails = () => {
     lawyer_name: '',
     city: '',
     email: '',
+    specialty: '',
     lawyer_id: '',
     user_id: '',
     date: '',
@@ -29,7 +30,7 @@ const LawyerDetails = () => {
       [e.target.name]: e.target.value,
       lawyer_name: lawyer.name,
       city: lawyer.location,
-      email: user.username,
+      email: user.email,
       lawyer_id: lawyer.id,
       user_id: user.id,
     });
@@ -62,6 +63,11 @@ const LawyerDetails = () => {
   const today = moment().format('YYYY-MM-DDThh:mm');
 
   const preventDrag = (e) => e.preventDefault();
+  const baseImg = 'https://res.cloudinary.com/dqyaazwe7/image/upload/v1633465669/symply_book_me/';
+  let imageId = '';
+  if (lawyer) {
+    imageId = JSON.parse(lawyer.data.image_data).id;
+  }
   return (
     <>
       <Sidebar />
@@ -69,18 +75,18 @@ const LawyerDetails = () => {
         <section className="content">
           <div className="text-center row" onDragStart={preventDrag}>
             <div className={`${styles.imgContainer} col-md-8`}>
-              <img src={lawyer.image_url} alt={lawyer.name} />
+              <img src={`${baseImg}${imageId}`} alt={lawyer.name} />
             </div>
             <div className={`${styles.leftNav} col-md-4`}>
               <h3 className={`${styles.name} font-weight-bold`}>{lawyer.name}</h3>
-              <p>{lawyer.speciality}</p>
+              <p>{lawyer.data.specialty}</p>
               <div>
                 <section className="modal-main text-center">
                   <form data-testid="form" onSubmit={handleSubmit}>
                     <h5 data-testid="title" className="text-center appoint-title pt-3">BOOK AN APPOINTMENT</h5>
                     <div className="form-group m-0">
                       <label htmlFor="lawyer_id">
-                        <input type="text" name="lawyer_id" id="lawyer_id" className="form-control" value={lawyer.id} readOnly hidden />
+                        <input type="text" name="lawyer_id" id="lawyer_id" className="form-control" value={lawyer.data.id} readOnly hidden />
                       </label>
                     </div>
                     <div className="form-group m-0">
@@ -91,7 +97,7 @@ const LawyerDetails = () => {
                     <div className="form-group">
                       <label htmlFor="lawyer_name">
                         Lawyer&apos;s Name
-                        <input type="text" name="lawyer_name" id="lawyer_name" className="form-control" value={lawyer.name} readOnly />
+                        <input type="text" name="lawyer_name" id="lawyer_name" className="form-control" value={lawyer.data.name} readOnly />
                       </label>
                     </div>
                     <div className="form-group">
@@ -111,12 +117,12 @@ const LawyerDetails = () => {
                     <div className="form-group">
                       <label htmlFor="city">
                         City
-                        <input type="text" name="city" id="city" className="form-control" value={lawyer.location} readOnly />
+                        <input type="text" name="city" id="city" className="form-control" value={lawyer.data.location} readOnly />
                       </label>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="username">
-                        <input type="text" name="username" id="username" className="form-control" value={user.username} readOnly hidden />
+                      <label htmlFor="email">
+                        <input type="text" name="email" id="email" className="form-control" value={user.email} readOnly hidden />
                       </label>
                     </div>
                     <button type="submit" className={`${styles.submit} p-0 m-0 text-center`}>Submit</button>

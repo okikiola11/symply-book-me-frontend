@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Lawyer.module.css';
 
 const Lawyer = ({ lawyer }) => {
-  const { name, image, speciality } = lawyer;
+  const { name, image, specialty } = lawyer;
   const baseImg = 'https://res.cloudinary.com/dqyaazwe7/image/upload/v1633465669/symply_book_me/';
 
   const preventDrag = (e) => e.preventDefault();
@@ -16,7 +16,7 @@ const Lawyer = ({ lawyer }) => {
       </div>
       <h5 className={`${styles.name} font-weight-bold`}>{name}</h5>
       <p className={styles.dots}>...........................</p>
-      <p className={styles.speciality}>{speciality}</p>
+      <p className={styles.specialty}>{specialty}</p>
       <p className={`${styles.docIcons} d-flex justify-content-center`}>
         <img src="https://img.icons8.com/dotty/50/A6A6A6/facebook-circled.png" alt="facebook" />
         <img src="https://img.icons8.com/dotty/50/A6A6A6/twitter-circled.png" alt="twitter" />
@@ -30,7 +30,7 @@ Lawyer.propTypes = {
   lawyer: PropTypes.shape({
     name: PropTypes.string,
     image: PropTypes.instanceOf(Object),
-    speciality: PropTypes.string,
+    specialty: PropTypes.string,
   }).isRequired,
 };
 
