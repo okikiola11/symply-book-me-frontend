@@ -1,15 +1,20 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import { fetchALawyer, bookAppointment} from '../../api';
+import { fetchALawyer, bookAppointment } from '../../api';
+import { setAppointment } from '../../Redux/actions/index';
 import styles from './LawyerDetails.module.css';
+import Sidebar from '../Sidebar/Sidebar';
 
-const LawyerDetails = () => ({
-  match, history,
-}) => {
+const LawyerDetails = () => {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
+  const history = useHistory();
+  const { lawyer_id } = useParams();
+  const user = useSelector((state) => state.user);
   const [lawyer, setLawyer] = useState(null);
   const [data, setData] = useState({
     lawyer_name: '',
@@ -20,7 +25,7 @@ const LawyerDetails = () => ({
     date: '',
   });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setData({
       [e.target.name]: e.target.value,
       lawyer_name: lawyer.name,
@@ -32,7 +37,7 @@ const LawyerDetails = () => ({
   };
 
   useEffect(() => {
-    const id = match.params.lawyer_id;
+    const id = lawyer_id;
     fetchALawyer(id, setLawyer);
   }, []);
 
@@ -40,9 +45,10 @@ const LawyerDetails = () => ({
     history.push('/appointments');
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(bookAppointment(data));
+    const value = bookAppointment(data);
+    dispatch(setAppointment(value));
     handleAppointments();
     setData({
       lawyer_name: '',
@@ -56,7 +62,7 @@ const LawyerDetails = () => ({
 
   const today = moment().format('YYYY-MM-DDThh:mm');
 
-  const preventDrag = e => e.preventDefault();
+  const preventDrag = (e) => e.preventDefault();
   return (
     <>
       <Sidebar />
@@ -106,7 +112,7 @@ const LawyerDetails = () => ({
                     <div className="form-group">
                       <label htmlFor="city">
                         City
-                        <input type="text" name="city" id="city" className="form-control" value={doctor.location} readOnly />
+                        <input type="text" name="city" id="city" className="form-control" value={lawyer.location} readOnly />
                       </label>
                     </div>
                     <div className="form-group">
@@ -136,7 +142,6 @@ LawyerDetails.propTypes = {
       lawyer_id: PropTypes.string,
     }),
   }).isRequired,
-  history: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default LawyerDetails;

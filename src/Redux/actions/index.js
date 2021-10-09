@@ -12,7 +12,12 @@ export const fetchLawyers = (lawyers) => ({
   payload: lawyers,
 });
 
-export const fetchOneLawyers = (lawyer) => ({
+export const fetchALawyers = (lawyer) => ({
   type: 'FETCH_LAWYERS',
   payload: lawyer,
+});
+
+export const setAppointment = (appoint) => ({
+  type: 'SET_APPOINTMENT',
+  payload: appoint,
 });

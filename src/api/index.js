@@ -54,5 +54,19 @@ export const fetchALawyer = async (id, setLawyer) => {
   });
   const aLawyer = await getALawyer.json();
   return setLawyer(aLawyer);
+};
 
+export const bookAppointment = async (data) => {
+  const appointmentBooking = await fetch(`${baseUrl}/appointments`, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+    body: JSON.stringify(data),
+  });
+  const appointmentCall = await appointmentBooking.json();
+  return appointmentCall;
 };
