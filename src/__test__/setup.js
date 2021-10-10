@@ -1,28 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Provider } from 'react-redux';
-import configureMockStore from 'redux-mock-store';
 import { fireEvent, render } from '@testing-library/react';
-import thunk from 'redux-thunk';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import Enzyme, { mount, shallow } from 'enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 
 Enzyme.configure({ adapter: new Adapter() });
-
-const middleware = [thunk];
-const mockStore = configureMockStore(middleware);
-const store = mockStore({
-  auth: {
-    user: {
-      appointment: [],
-      id: 'id-01',
-      email: 'test@mail.com',
-    },
-  },
-  isLoading: false,
-  error: null,
-});
 
 export const shallowRender = (Element, props = {}) => (
   shallow(
