@@ -66,7 +66,7 @@ const LawyerDetails = () => {
   const baseImg = 'https://res.cloudinary.com/dqyaazwe7/image/upload/v1633465669/symply_book_me/';
   let imageId = '';
   if (lawyer) {
-    imageId = JSON.parse(lawyer.data.image_data).id;
+    imageId = JSON.parse(lawyer?.data.image_data).id;
   }
   return (
     <>
