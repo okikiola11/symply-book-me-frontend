@@ -110,7 +110,4 @@ export const deleteAppointments = async (id) => {
   });
   const appointment = await deletedAppointed.json();
   return appointment;
-  // .then(() => {
-  //   dispatch(action.destroyAppointments(id));
-  // });
 };
