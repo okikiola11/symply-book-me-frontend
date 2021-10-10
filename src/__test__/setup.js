@@ -16,7 +16,6 @@ const store = mockStore({
   auth: {
     user: {
       appointment: [],
-      gym_sessions: [],
       id: 'id-01',
       email: 'test@mail.com',
     },
