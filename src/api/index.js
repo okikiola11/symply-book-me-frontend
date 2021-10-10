@@ -42,10 +42,6 @@ export const signOut = async () => {
   });
   const userLogOut = await logOut.json();
   return userLogOut;
-  // .then(res => res.json())
-  // .then(() => {
-  //   dispatch(action.destroyUser());
-  // });
 };
 
 export const fetchAllLawyers = async () => {
@@ -87,4 +83,18 @@ export const bookAppointment = async (data) => {
   });
   const appointmentCall = await appointmentBooking.json();
   return appointmentCall;
+};
+
+export const fetchAppointments = async () => {
+  const displayAllAppointment = await fetch(`${baseUrl}/appointments`, {
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  const allAppointments = await displayAllAppointment.json();
+  console.log(allAppointments);
+  return allAppointments;
 };

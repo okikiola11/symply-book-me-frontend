@@ -26,12 +26,13 @@ const LawyerDetails = () => {
   });
 
   const handleChange = (e) => {
+    console.log(user);
     setData({
       [e.target.name]: e.target.value,
-      lawyer_name: lawyer.name,
-      city: lawyer.location,
+      lawyer_name: lawyer.data.name,
+      city: lawyer.data.location,
       email: user.email,
-      lawyer_id: lawyer.id,
+      lawyer_id: lawyer.data.id,
       user_id: user.id,
     });
   };
@@ -47,7 +48,9 @@ const LawyerDetails = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const value = bookAppointment(data);
+    console.log(data);
+    const value = await bookAppointment(data);
+    console.log(value);
     dispatch(setAppointment(value));
     handleAppointments();
     setData({

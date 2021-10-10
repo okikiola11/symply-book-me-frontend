@@ -5,6 +5,7 @@ import Signup from '../../containers/Signup';
 import Login from '../../containers/Login';
 import Lawyers from '../../containers/Lawyers/Lawyers';
 import LawyerDetails from '../../containers/LawyerDetails/LawyerDetails';
+import Appointments from '../../containers/Appointments/Appointments';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
       <Route exact path="/signin" component={Login} />
       <Route exact path="/lawyers" component={Lawyers} />
       <Route exact path="/lawyers/:lawyer_id" component={LawyerDetails} />
+      <Route path="/appointments" component={Appointments} />
     </Switch>
   </Router>
 );

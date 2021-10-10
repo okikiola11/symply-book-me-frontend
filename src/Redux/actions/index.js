@@ -21,3 +21,13 @@ export const setAppointment = (appoint) => ({
   type: 'SET_APPOINTMENT',
   payload: appoint,
 });
+
+export const getAppointments = (appoints) => ({
+  type: 'GET_APPOINTMENT',
+  payload: appoints,
+});
+
+export const destroyAppointments = (appoints) => ({
+  type: 'DEL_APPOINTMENT',
+  payload: appoints,
+});
