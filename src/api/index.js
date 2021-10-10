@@ -31,7 +31,7 @@ export const userLogin = async (userObj) => {
 };
 
 export const signOut = async () => {
-  const logOut = await fetch(`${baseUrl}/log_out`, {
+  const logOut = await fetch(`${baseUrl}/logout`, {
     method: 'DELETE',
     mode: 'cors',
     headers: {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
 import * as action from '../Redux/actions/index';
 import styles from '../styles/Auth.module.css';
@@ -88,4 +89,5 @@ const Signup = () => {
 // Signup.propTypes = {
 //   history: PropTypes.instanceOf(Object).isRequired,
 // };
+
 export default Signup;

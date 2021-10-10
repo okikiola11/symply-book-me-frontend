@@ -28,13 +28,12 @@ const Login = () => {
 
   const handleOnsubmit = async (userObj) => {
     const { email, password } = userObj;
-
     try {
       const res = await userLogin({ email, password });
       if (res.token) {
         dispatch(action.fetchUser(res));
         history.push('/lawyers');
-        toast.success(`Welcome back ${res.email}`);
+        toast.success(`Welcome back ${email}`);
       } else {
         toast.error(res.error);
       }

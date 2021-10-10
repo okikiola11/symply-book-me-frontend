@@ -47,7 +47,6 @@ const LawyerDetails = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(data);
     const value = await bookAppointment(data);
     dispatch(setAppointment(value));
     handleAppointments();

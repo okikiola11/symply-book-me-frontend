@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+
 .sidebar {
   margin: 0;
   padding: 0;
@@ -63,6 +65,10 @@
   width: 150px;
   background: none;
   color: black;
+}
+
+h3 {
+  font-family: 'Festive', cursive;
 }
 
 @media screen and (max-width: 768px) {

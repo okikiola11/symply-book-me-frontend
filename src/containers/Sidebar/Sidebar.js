@@ -30,7 +30,7 @@ const Sidebar = () => {
         <img src="https://img.icons8.com/ios-filled/24/000000/menu--v1.png" alt="menu-icon" />
       </button>
       <section className={`${styles.sidebar} sidebar`}>
-        <h3 className="pl-3 font-weight-bold pb-5 mb-5">SYMPLY BOOK ME</h3>
+        <h3 className="pl-3 font-weight-bold pb-5 mb-5 text-center">SYMPLY BOOK ME</h3>
         <NavLink activeClassName={styles.active} to="/lawyers">LAWYERS</NavLink>
         <NavLink activeClassName={styles.active} to="/appointments">APPOINTMENTS</NavLink>
         <div className={styles.footer}>
