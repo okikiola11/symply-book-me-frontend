@@ -10,6 +10,7 @@ import FormContainer from './FormContainer';
 import Form from '../components/Form';
 import * as action from '../Redux/actions/index';
 import { userLogin } from '../api/index';
+import Header from '../components/Header/Header';
 import styles from '../styles/Auth.module.css';
 
 const schema = yup.object().shape({
@@ -43,6 +44,7 @@ const Login = () => {
   };
   return (
     <section className={styles.container}>
+      <Header />
       <div className={`${styles.formContainer}`}>
         <FormContainer title="Login">
           <Form handleSubmit={handleSubmit(handleOnsubmit)}>

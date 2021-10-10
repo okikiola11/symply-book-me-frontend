@@ -5,11 +5,11 @@ import Appointment from '../../components/Appointment/Appointment';
 import Sidebar from '../Sidebar/Sidebar';
 import { fetchAppointments, deleteAppointments } from '../../api';
 import { getAppointments, destroyAppointments } from '../../Redux/actions';
+import './Appointment.css';
 
 const Appointments = () => {
   const dispatch = useDispatch();
   const appointments = useSelector((state) => state.appointments);
-  // const [isLoaded, setIsLoaded] = useState(null);
 
   useEffect(() => {
     const getAllAppointments = async () => {
@@ -19,12 +19,6 @@ const Appointments = () => {
       }
     };
     getAllAppointments();
-    // if (appointments?.length > 0) {
-    //   setIsLoaded(true);
-    // }
-    // return () => {
-    //   setIsLoaded(false);
-    // };
   }, []);
 
   const handleDeleteAppointment = async (e) => {

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link, useHistory } from 'react-router-dom';
 
 import * as action from '../Redux/actions/index';
 import styles from '../styles/Auth.module.css';
 import { userRegistration } from '../api';
 import Header from '../components/Header/Header';
 
-const Signup = ({ history }) => {
+const Signup = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [error, setError] = useState('');
   const [isLoaded, setIsLoaded] = useState(null);
 
@@ -49,8 +49,7 @@ const Signup = ({ history }) => {
   return (
     <section className={styles.container}>
       <Header />
-
-      <div className={`${styles.formContainer} text-center`}>
+      <div className={`${styles.formContainer} mt-5 text-center`}>
         <form data-testid="form" onSubmit={handleSubmit}>
           <h3 data-testid="title" className="text-center">Register</h3>
           <h6 className="text-danger">{error}</h6>
@@ -86,8 +85,7 @@ const Signup = ({ history }) => {
   );
 };
 
-Signup.propTypes = {
-  history: PropTypes.instanceOf(Object).isRequired,
-};
-
+// Signup.propTypes = {
+//   history: PropTypes.instanceOf(Object).isRequired,
+// };
 export default Signup;

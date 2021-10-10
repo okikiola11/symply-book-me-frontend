@@ -1,6 +1,5 @@
 .container {
   background-color: #fafafa;
-  min-height: 100vh;
 }
 
 h3 {
@@ -11,11 +10,11 @@ input,
 label {
   width: 80%;
   text-align: left;
-  font-size: 1.6rem;
 }
 
 .formContainer {
   margin: auto;
+  padding-top: 100px;
   max-width: 400px;
   min-width: 290px;
 }
@@ -28,7 +27,7 @@ label {
 button {
   width: 20%;
   padding: 10px 0;
-  padding-top: 50px;
+  padding-top: 10px;
   font-size: 1.6rem;
 }
 

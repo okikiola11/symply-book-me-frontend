@@ -5,7 +5,6 @@ import moment from 'moment';
 import styles from './Appointment.module.css';
 
 const Appointment = ({ appointment, handleClick, dataId }) => {
-  console.log(appointment);
   const {
     lawyer_name, user, appointed_date, location,
   } = appointment;

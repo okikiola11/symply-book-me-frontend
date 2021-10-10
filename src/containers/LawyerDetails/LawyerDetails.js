@@ -53,7 +53,7 @@ const LawyerDetails = () => {
     handleAppointments();
     setData({
       lawyer_name: '',
-      city: '',
+      location: '',
       email: '',
       lawyer_id: '',
       user_id: '',
