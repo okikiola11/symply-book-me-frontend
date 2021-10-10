@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Appointment from '../../components/Appointment/Appointment';
 import Sidebar from '../Sidebar/Sidebar';
-import { fetchAppointments } from '../../api';
-import { getAppointments } from '../../Redux/actions';
+import { fetchAppointments, deleteAppointments } from '../../api';
+import { getAppointments, destroyAppointments } from '../../Redux/actions';
 
 const Appointments = () => {
   const dispatch = useDispatch();
@@ -26,11 +26,12 @@ const Appointments = () => {
     //   setIsLoaded(false);
     // };
   }, []);
-  
-  // const handleDeleteAppointment = e => {
-  //   const { id } = e.target.dataset;
-  //   dispatch(deleteAppointments(id));
-  // };
+
+  const handleDeleteAppointment = async (e) => {
+    const { id } = e.target.dataset;
+    const action = await deleteAppointments(id);
+    dispatch(destroyAppointments(action));
+  };
 
   return (
     <>
@@ -54,8 +55,8 @@ const Appointments = () => {
                   <Appointment
                     key={appointment.id}
                     appointment={appointment}
-                    // handleClick={handleDeleteAppointment}
-                    dataId={appointment.id}
+                    handleClick={handleDeleteAppointment}
+                    dataId={appointment?.id}
                   />
                 ))}
               </tbody>

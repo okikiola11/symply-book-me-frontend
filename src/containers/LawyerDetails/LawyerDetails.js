@@ -17,20 +17,19 @@ const LawyerDetails = () => {
   const [lawyer, setLawyer] = useState(null);
   const [data, setData] = useState({
     lawyer_name: '',
-    city: '',
+    location: '',
     email: '',
     specialty: '',
     lawyer_id: '',
     user_id: '',
-    date: '',
+    appointed_date: '',
   });
 
   const handleChange = (e) => {
-    console.log(user);
     setData({
       [e.target.name]: e.target.value,
       lawyer_name: lawyer.data.name,
-      city: lawyer.data.location,
+      location: lawyer.data.location,
       email: user.email,
       lawyer_id: lawyer.data.id,
       user_id: user.id,
@@ -50,7 +49,6 @@ const LawyerDetails = () => {
     e.preventDefault();
     console.log(data);
     const value = await bookAppointment(data);
-    console.log(value);
     dispatch(setAppointment(value));
     handleAppointments();
     setData({
@@ -108,7 +106,7 @@ const LawyerDetails = () => {
                         Date
                         <input
                           type="datetime-local"
-                          name="date"
+                          name="appointed_date"
                           id="date"
                           className="form-control"
                           required
@@ -120,7 +118,7 @@ const LawyerDetails = () => {
                     <div className="form-group">
                       <label htmlFor="city">
                         City
-                        <input type="text" name="city" id="city" className="form-control" value={lawyer.data.location} readOnly />
+                        <input type="text" name="location" id="city" className="form-control" value={lawyer.data.location} readOnly />
                       </label>
                     </div>
                     <div className="form-group">

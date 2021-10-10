@@ -95,6 +95,22 @@ export const fetchAppointments = async () => {
     },
   });
   const allAppointments = await displayAllAppointment.json();
-  console.log(allAppointments);
   return allAppointments;
+};
+
+export const deleteAppointments = async (id) => {
+  const deletedAppointed = await fetch(`${baseUrl}/appointments/${id}`, {
+    method: 'DELETE',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  const appointment = await deletedAppointed.json();
+  return appointment;
+  // .then(() => {
+  //   dispatch(action.destroyAppointments(id));
+  // });
 };
