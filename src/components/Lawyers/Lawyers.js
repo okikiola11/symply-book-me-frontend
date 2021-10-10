@@ -5,7 +5,8 @@ import styles from './Lawyer.module.css';
 
 const Lawyer = ({ lawyer }) => {
   const { name, image, specialty } = lawyer;
-  const baseImg = 'https://res.cloudinary.com/dqyaazwe7/image/upload/v1633465669/symply_book_me/';
+  const CLOUD_NAME = process.env.REACT_APP_CLOUD_NAME;
+  const baseImg = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1633465669/symply_book_me/`;
 
   const preventDrag = (e) => e.preventDefault();
 

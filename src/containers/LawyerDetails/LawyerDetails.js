@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { useParams } from 'react-router-dom';
+import dotenv from 'dotenv';
 import moment from 'moment';
 import { fetchALawyer, bookAppointment } from '../../api';
 import { setAppointment } from '../../Redux/actions/index';
 import styles from './LawyerDetails.module.css';
 import Sidebar from '../Sidebar/Sidebar';
+
+dotenv.config();
 
 const LawyerDetails = () => {
   const dispatch = useDispatch();
@@ -63,7 +66,8 @@ const LawyerDetails = () => {
   const today = moment().format('YYYY-MM-DDThh:mm');
 
   const preventDrag = (e) => e.preventDefault();
-  const baseImg = 'https://res.cloudinary.com/dqyaazwe7/image/upload/v1633465669/symply_book_me/';
+  const CLOUD_NAME = process.env.REACT_APP_CLOUD_NAME;
+  const baseImg = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1633465669/symply_book_me/`;
   let imageId = '';
   if (lawyer) {
     imageId = JSON.parse(lawyer?.data.image_data).id;
