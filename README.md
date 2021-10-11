@@ -21,6 +21,18 @@ redux | Library for unidirectional data flows
 redux-thunk | Async redux library middleware
 --- | ----
 
+## Development Dependencies
+Dependency | Use
+--- | ------ 
+babel-eslint | Lint modern JavaScript via ESLint
+eslint | Lints JavaScript
+eslint-plugin-react-hooks | Adds additional React-hooks-related rules to ESLint
+eslint-plugin-react | Adds additional React-related rules to ESLint
+jest | Automated testing framework
+stylelint | Lints css
+stylelint-csstree-validator | Advanced linting validation for css
+--- | ----
+
 ## Homepage
 ![screenshot](./src/assets/screenshot.png)
 
