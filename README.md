@@ -21,8 +21,8 @@ redux | Library for unidirectional data flows
 redux-thunk | Async redux library middleware
 --- | ----
 
-
-![screenshot](src/assets/screenshot.png)
+## Homepage
+![screenshot](./src/assets/screenshot.png)
 
 ## Getting Started
 ```
