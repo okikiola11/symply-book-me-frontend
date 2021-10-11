@@ -1,5 +1,6 @@
 // const baseUrl = 'http://localhost:3000/api/v1';
-const baseUrl = 'https://glacial-chamber-50989.herokuapp.com/api/v1';
+// const baseUrl = 'https://glacial-chamber-50989.herokuapp.com/api/v1';
+const baseUrl = 'https://admiring-brown-f9346f.netlify.app/api/v1';
 
 export const userRegistration = async (userObj) => {
   const createdUser = await fetch(`${baseUrl}/users`, {
