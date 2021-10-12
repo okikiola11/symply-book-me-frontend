@@ -69,7 +69,7 @@ const Signup = () => {
       <div className={`${styles.formContainer} mt-5 text-center`}>
         <FormContainer title="register">
           <Form handleSubmit={handleSubmit(handleOnSubmit)}>
-            <h3 data-testid="title" className="text-center">Register</h3>
+            {/* <h3 data-testid="title" className="text-center">Register</h3> */}
             <h6 className="text-danger">{error}</h6>
             <div className="form-group">
               <span>Name</span>
@@ -89,11 +89,6 @@ const Signup = () => {
             <div className={`${styles.spaces}`}>
               <button type="submit" className="btn btn-primary p-0 m-0">Submit</button>
             </div>
-            {/* <div>
-              Already have an account.
-              {' '}
-              <Link to="/signin">Sign in here.</Link>
-            </div> */}
           </Form>
         </FormContainer>
       </div>
