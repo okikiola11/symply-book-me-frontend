@@ -12,8 +12,8 @@ export const userRegistration = async (userObj) => {
     },
     body: JSON.stringify(userObj),
   });
-  console.log(createdUser);
-  const { user, token } = createdUser;
+  const { user, token } = await createdUser.json();
+  console.log(createdUser, 'hello');
   localStorage.setItem('token', token);
   return user;
 };
