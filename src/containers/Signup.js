@@ -66,7 +66,7 @@ const Signup = () => {
   return (
     <section className={styles.container}>
       <Header />
-      <div className={`${styles.formContainer} mt-5 text-center`}>
+      <div className={`${styles.formContainer} mt-5`}>
         <FormContainer title="register">
           <Form handleSubmit={handleSubmit(handleOnSubmit)}>
             {/* <h3 data-testid="title" className="text-center">Register</h3> */}

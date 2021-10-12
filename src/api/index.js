@@ -13,7 +13,6 @@ export const userRegistration = async (userObj) => {
     body: JSON.stringify(userObj),
   });
   const { user, token } = await createdUser.json();
-  console.log(user);
   localStorage.setItem('token', token);
   return user;
 };
