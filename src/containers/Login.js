@@ -33,7 +33,7 @@ const Login = () => {
       if (res.token) {
         dispatch(action.fetchUser(res));
         history.push('/lawyers');
-        toast.success(`Welcome back ${email}`);
+        toast.success(`Welcome back ${res.name}`);
       } else {
         toast.error(res.error);
       }
