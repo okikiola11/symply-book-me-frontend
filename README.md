@@ -51,7 +51,7 @@ $ npm run test
 ```
 
 ## Live link
-Click <a href="https://admiring-brown-f9346f.netlify.app">Book a lawyer</a>
+Click <a href="https://glacial-chamber-50989.herokuapp.com/">Book a lawyer</a>
 
 
 ## Author

@@ -39,17 +39,20 @@ const Signup = () => {
   };
 
   const handleOnSubmit = async (userObj) => {
-    console.log(userObj);
-    const createdUser = await userRegistration(userObj);
-    if (createdUser && Object.keys(createdUser).length > 0) {
-      setIsLoaded(true);
-      handleSignUp();
-      setError('');
-      dispatch(action.fetchUser(createdUser));
-      toast.success('Please book a lawyers appointment');
-    } else {
-      setError('Email already in use or invalid details');
-      toast.error(error);
+    try {
+      const createdUser = await userRegistration(userObj);
+      if (createdUser && Object.keys(createdUser).length > 0) {
+        setIsLoaded(true);
+        handleSignUp();
+        setError('');
+        dispatch(action.fetchUser(createdUser));
+        toast.success('Please book a lawyers appointment');
+      } else {
+        setError('Email already in use or invalid details');
+        toast.error(error);
+      }
+    } catch (e) {
+      toast.error('Email already in use or invalid details');
     }
   };
 
