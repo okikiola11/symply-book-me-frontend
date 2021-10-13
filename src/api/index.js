@@ -1,9 +1,8 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
-const baseURL = 'http://localhost:3000/api/v1';
-// const baseURL = 'https://glacial-chamber-50989.herokuapp.com/api/v1';
-// const baseUrl = 'https://admiring-brown-f9346f.netlify.app/api/v1';
+// const baseURL = 'http://localhost:3000/api/v1';
+const baseURL = 'https://glacial-chamber-50989.herokuapp.com/api/v1';
 
 const axiosInstance = axios.create({
   baseURL,
@@ -27,7 +26,6 @@ export const userRegistration = async (userObj) => {
 export const userLogin = async (userObj) => {
   const { data } = await axiosInstance.post('/login', userObj);
   const { user } = data;
-  // const user = await loggedInUser.json();
   localStorage.setItem('token', user.token);
   return user;
 };
