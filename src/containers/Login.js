@@ -30,7 +30,8 @@ const Login = () => {
     const { email, password } = userObj;
     try {
       const res = await userLogin({ email, password });
-      if (res.token) {
+      console.log(res);
+      if (res) {
         dispatch(action.fetchUser(res));
         history.push('/lawyers');
         toast.success(`Welcome back ${res.name}`);

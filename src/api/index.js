@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
-// const baseURL = 'http://localhost:3000/api/v1';
-const baseURL = 'https://glacial-chamber-50989.herokuapp.com/api/v1';
+const baseURL = 'http://localhost:3000/api/v1';
+// const baseURL = 'https://glacial-chamber-50989.herokuapp.com/api/v1';
 
 const axiosInstance = axios.create({
   baseURL,
@@ -25,8 +25,8 @@ export const userRegistration = async (userObj) => {
 
 export const userLogin = async (userObj) => {
   const { data } = await axiosInstance.post('/login', userObj);
-  const { user } = data;
-  localStorage.setItem('token', user.token);
+  const { user, token } = data;
+  localStorage.setItem('token', token);
   return user;
 };
 
