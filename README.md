@@ -1,6 +1,6 @@
 # SYMPLY BOOK ME
 
-A Single Page Application for booking a lawyer's appointment. The app is built with React and Redux libraries for the frontend and fetches data from a backend API built using Ruby on Rails.
+A Single Page Application for booking a lawyer's appointment. The app is built with React and Redux libraries for the frontend and fetches data from a backend API built using Ruby on Rails. [backend repo](https://github.com/okikiola11/symply-book-me-api)
 
 ## Roadmap
 - The user logs in the app
