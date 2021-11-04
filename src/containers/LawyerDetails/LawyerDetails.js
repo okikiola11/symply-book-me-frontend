@@ -79,10 +79,10 @@ const LawyerDetails = () => {
       {lawyer ? (
         <section className="content">
           <div className="text-center row" onDragStart={preventDrag}>
-            <div className={`${styles.imgContainer} col-md-8`}>
+            <div className={`${styles.imgContainer} col-md-7`}>
               <img src={`${baseImg}${imageId}`} alt={lawyer.name} />
             </div>
-            <div className={`${styles.leftNav} col-md-4`}>
+            <div className={`${styles.leftNav} col-md-5`}>
               <h3 className={`${styles.name} font-weight-bold`}>{lawyer.name}</h3>
               <p>{lawyer.data.specialty}</p>
               <div>
