@@ -51,7 +51,7 @@ $ npm run test
 ```
 
 ## Live link
-Click <a href="">Book a lawyer</a>
+Click <a href="https://symply-book-me.herokuapp.com/">Book a lawyer</a>
 
 
 ## Author

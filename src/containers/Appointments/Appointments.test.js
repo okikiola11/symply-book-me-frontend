@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 
-import Appointments from '../../containers/Appointments';
+import Appointments from './Appointments';
 import store from '../../Redux/store';
 
 describe('Appointments', () => {

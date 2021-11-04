@@ -1,42 +1,35 @@
-import { act } from 'react-dom/test-utils';
+import React from 'react';
+import { render } from '@testing-library/react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
 import Login from '../../containers/Login';
-import { renderWrapper, getById, changeInputText } from '../setup';
+import store from '../../Redux/store';
 
-describe('Login', () => {
-  let errorMessage;
-  let container;
-  let emailInput;
-  let passwordInput;
-  beforeEach(async () => {
-    await act(async () => {
-      ({ container } = await renderWrapper(Login));
-    });
+describe('SignUp', () => {
+  it('renders SignUp component with a title', () => {
+    const div = document.createElement('div');
+    const { queryAllByTestId } = render(
+      <Provider store={store}>
+        <Router>
+          <Route path="/Login" component={Login} />
+        </Router>
+      </Provider>, div,
+    );
+    const title = queryAllByTestId('title');
+    expect(title).toBeTruthy();
   });
 
-  test('should validate email presence', async () => {
-    emailInput = await getById(container, 'email');
-    await changeInputText(emailInput);
-
-    errorMessage = 'Email is required';
-
-    expect(container.innerHTML.includes(errorMessage)).toBeTruthy();
-  });
-
-  test('should be a valid email', async () => {
-    emailInput = await getById(container, 'email');
-    await changeInputText(emailInput, 'email');
-
-    errorMessage = 'Invalid email';
-
-    expect(container.innerHTML.includes(errorMessage)).toBeTruthy();
-  });
-
-  test('should validate presence of password', async () => {
-    passwordInput = await getById(container, 'password');
-    await changeInputText(passwordInput, '');
-
-    errorMessage = 'Password is required';
-
-    expect(container.innerHTML.includes(errorMessage)).toBeTruthy();
+  it('should have a Sign In form', () => {
+    const div = document.createElement('div');
+    const { queryAllByTestId } = render(
+      <Provider store={store}>
+        <Router>
+          <Route path="/Login" component={Login} />
+        </Router>
+      </Provider>, div,
+    );
+    const form = queryAllByTestId('form');
+    expect(form).toBeTruthy();
   });
 });

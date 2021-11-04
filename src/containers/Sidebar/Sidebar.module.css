@@ -13,6 +13,10 @@
   display: block;
 }
 
+h3 {
+  font-family: 'Festive', cursive;
+}
+
 .sidebar h3 {
   margin: 20px 0 50px auto;
 }
@@ -65,10 +69,6 @@
   width: 150px;
   background: none;
   color: black;
-}
-
-h3 {
-  font-family: 'Festive', cursive;
 }
 
 @media screen and (max-width: 768px) {
