@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
 
-// const baseURL = 'http://localhost:3000/api/v1';
-const baseURL = 'https://peaceful-lake-25439.herokuapp.com/api/v1';
+const baseURL = 'http://localhost:3000/api/v1';
+// const baseURL = 'https://peaceful-lake-25439.herokuapp.com/api/v1';
 
 const axiosInstance = axios.create({
   baseURL,
@@ -24,14 +24,14 @@ export const userRegistration = async (userObj) => {
 };
 
 export const userLogin = async (userObj) => {
-  const { data } = await axiosInstance.post('/login', userObj);
+  const { data } = await axiosInstance.post('/create', userObj);
   const { user, token } = data;
   localStorage.setItem('token', token);
   return user;
 };
 
 export const signOut = async () => {
-  const { data } = await axiosInstance.delete('/logout');
+  const { data } = await axiosInstance.delete('/destroy');
   return data;
 };
 

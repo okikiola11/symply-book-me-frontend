@@ -30,7 +30,6 @@ const Login = () => {
     const { email, password } = userObj;
     try {
       const res = await userLogin({ email, password });
-      console.log(res);
       if (res) {
         dispatch(action.fetchUser(res));
         history.push('/lawyers');
@@ -39,7 +38,7 @@ const Login = () => {
         toast.error(res.error);
       }
     } catch (error) {
-      toast.error(error.error);
+      toast.error('Invalid email/password');
     }
   };
   return (

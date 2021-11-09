@@ -69,7 +69,6 @@ const LawyerDetails = () => {
   const CLOUD_NAME = process.env.REACT_APP_CLOUD_NAME;
   const baseImg = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1633465669/symply_book_me/`;
   let imageId = '';
-  console.log(lawyer);
   if (lawyer && lawyer.data) {
     imageId = JSON.parse(lawyer?.data?.image_data).id;
   }
