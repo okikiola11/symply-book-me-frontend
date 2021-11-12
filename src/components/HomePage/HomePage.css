@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+
+.homepage__main {
+  background-image: url('../../assets/lawyers-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  font-family: 'Dosis', sans-serif;
+}
+
+.homepage__welcome_text {
+  color: white;
+}
+
+.homepage__welcome_text h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.homepage__welcome_text a {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+  left: 0;
+  height: 10vh;
+  background-color: #2b2b2b;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  font-family: 'Festive', cursive;
+}

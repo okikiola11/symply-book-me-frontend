@@ -1,0 +1,40 @@
+.container {
+  background-color: #fafafa;
+}
+
+h3 {
+  margin-top: 50px;
+}
+
+input,
+label {
+  width: 80%;
+  text-align: left;
+}
+
+.formContainer {
+  margin: auto;
+  padding-top: 100px;
+  max-width: 400px;
+  min-width: 290px;
+}
+
+.homeLink {
+  text-align: right;
+  padding: 30px;
+}
+
+button {
+  width: 20%;
+  padding: 10px 0;
+  padding-top: 10px;
+  font-size: 1.6rem;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+.spaces {
+  margin-top: 20px !important;
+}
